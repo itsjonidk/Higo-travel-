@@ -153,6 +153,21 @@
       .deal .btn{width:100%}
       .deal-note{margin:16px 0 0;text-align:center;color:var(--muted);font-size:.88rem;line-height:1.55}
 
+      /* extended stays */
+      .ext-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+      .ext-card{border:2px solid var(--line);border-radius:var(--radius);padding:20px;background:#fff;display:flex;flex-direction:column}
+      .ext-card.pick{border-color:var(--teal)}
+      .ext-card .ext-days{font-size:.72rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--teal);margin:0 0 7px}
+      .ext-card h3{font-size:1.12rem;margin:0 0 4px;font-weight:800;line-height:1.25}
+      .ext-card .ext-total{font-family:"Bricolage Grotesque",sans-serif;font-size:2rem;font-weight:800;color:var(--navy-deep);line-height:1;margin:8px 0 4px}
+      .ext-card .ext-total small{font-size:.9rem;font-weight:700;color:var(--muted)}
+      .ext-card .ext-per{margin:0 0 8px;color:var(--ink-soft);font-size:.9rem;line-height:1.5}
+      .ext-card .ext-per strong{color:var(--ink)}
+      .ext-card .ext-extra{margin:0 0 16px;font-size:.82rem;font-weight:700;color:#8a5c00;background:var(--gold-soft);border-radius:8px;padding:6px 10px;line-height:1.45}
+      .ext-card .btn{width:100%;margin-top:auto;padding:12px 16px;min-height:48px;font-size:.92rem}
+      @media (max-width:960px){.ext-grid{grid-template-columns:1fr 1fr}}
+      @media (max-width:560px){.ext-grid{grid-template-columns:1fr}}
+
       /* tour */
       .split{display:grid;grid-template-columns:.92fr 1.08fr;gap:36px;align-items:start}
       .incl{list-style:none;margin:0;padding:0}
@@ -367,6 +382,12 @@
                 <select id="bk-deal">
                   <option value="b1t1">Buy 1 Take 1 · $250 for 2 people</option>
                   <option value="family">Family Deal · $450 for 4 people</option>
+                  <optgroup label="Extended stays · for 2 people">
+                    <option value="ext3">Extended Stay · 3 days, 2 nights · $280 for 2</option>
+                    <option value="ext4">Extended Stay · 4 days, 3 nights · $310 for 2</option>
+                    <option value="ext5">Extended Stay · 5 days, 4 nights · $340 for 2</option>
+                    <option value="ext6">Extended Stay · 6 days, 5 nights · $370 for 2</option>
+                  </optgroup>
                   <option value="custom">Custom itinerary · priced for your group</option>
                   <option value="beyond">Trip beyond Da Nang · tell us where</option>
                   <option value="voucher">ProviaMed $300 gift voucher · claim</option>
@@ -451,6 +472,48 @@
             </article>
           </div>
           <p class="deal-note">Prices in USD. The Hue tour is optional, and custom itineraries are available at an additional cost. Booking is subject to availability, and final details are confirmed with HiGo Travel on WhatsApp before you pay anything.</p>
+
+          <!-- EXTENDED STAYS -->
+          <div class="sec-head" style="margin-top:38px">
+            <p class="kicker teal">Extended Stays · For Two</p>
+            <h2>Stay longer: just $30 more per night</h2>
+            <p>Want more time in Da Nang? These extended stay prices are all for <strong>2 people</strong>. Every extra night adds just <strong>$30 total</strong>, that is $15 more per person. The $250 Christmas Buy 1 Take 1 above stays the main promo for 3 days and 2 nights. Pick a length below and it fills into the booking form and your WhatsApp message above.</p>
+          </div>
+          <div class="ext-grid">
+            <article class="ext-card">
+              <p class="ext-days">3 Days · 2 Nights</p>
+              <h3>Extended Stay for 2</h3>
+              <div class="ext-total">$280 <small>USD for 2</small></div>
+              <p class="ext-per">That is <strong>$140 per person</strong> for 2 pax.</p>
+              <p class="ext-extra">The standard extended stay length</p>
+              <button class="btn btn-navy" type="button" data-book-deal="ext3">Book 3 days · 2 nights</button>
+            </article>
+            <article class="ext-card pick">
+              <p class="ext-days">4 Days · 3 Nights</p>
+              <h3>Extended Stay for 2</h3>
+              <div class="ext-total">$310 <small>USD for 2</small></div>
+              <p class="ext-per">That is <strong>$155 per person</strong> for 2 pax.</p>
+              <p class="ext-extra">+1 extra night · +$30 total</p>
+              <button class="btn btn-navy" type="button" data-book-deal="ext4">Book 4 days · 3 nights</button>
+            </article>
+            <article class="ext-card">
+              <p class="ext-days">5 Days · 4 Nights</p>
+              <h3>Extended Stay for 2</h3>
+              <div class="ext-total">$340 <small>USD for 2</small></div>
+              <p class="ext-per">That is <strong>$170 per person</strong> for 2 pax.</p>
+              <p class="ext-extra">+2 extra nights · +$60 total</p>
+              <button class="btn btn-navy" type="button" data-book-deal="ext5">Book 5 days · 4 nights</button>
+            </article>
+            <article class="ext-card">
+              <p class="ext-days">6 Days · 5 Nights</p>
+              <h3>Extended Stay for 2</h3>
+              <div class="ext-total">$370 <small>USD for 2</small></div>
+              <p class="ext-per">That is <strong>$185 per person</strong> for 2 pax.</p>
+              <p class="ext-extra">+3 extra nights · +$90 total</p>
+              <button class="btn btn-navy" type="button" data-book-deal="ext6">Book 6 days · 5 nights</button>
+            </article>
+          </div>
+          <p class="deal-note">Extended stay prices are in USD for 2 pax: $280 (3 days, 2 nights), $310 (4 days, 3 nights), $340 (5 days, 4 nights) and $370 (6 days, 5 nights). Each extra night is +$30 for two. Coming with a different group size? Send the booking anyway and HiGo Travel will price it for your group on WhatsApp.</p>
         </div>
       </section>
 
@@ -542,6 +605,7 @@
             <details><summary>What exactly is included?</summary><p>The main package includes the hotel stay for 2 nights, the Ba Na Hills Tour with the Golden Bridge, and the Hoi An Tour. Message HiGo Travel on WhatsApp for the full rundown for your dates before you book.</p></details>
             <details><summary>Can we add the Hue tour?</summary><p>Yes. The Hue tour is available as an optional add-on to the main Ba Na Hills and Hoi An package. Tick it in the booking form, or ask on WhatsApp.</p></details>
             <details><summary>Can we change the itinerary?</summary><p>Yes. Custom itineraries are available at an additional cost. Tell us the sights, days, or route you have in mind and we will build a custom itinerary for your group.</p></details>
+            <details><summary>Can we stay longer than 3 days?</summary><p>Yes, with an extended stay for 2 people: 3 days and 2 nights is $280 ($140 each), 4 days and 3 nights is $310 ($155 each), 5 days and 4 nights is $340 ($170 each), and 6 days and 5 nights is $370 ($185 each). Every extra night adds just $30 total for two. Pick your length in the booking form on the Deals tab and it goes straight into your WhatsApp message. The $250 Christmas Buy 1 Take 1 remains the main promo for 3 days and 2 nights.</p></details>
             <details><summary>How do I book with a date?</summary><p>Go to the Deals tab, choose your deal, pick your travel date on the calendar, and set how many are travelling. The WhatsApp button there is already filled in with all of it. Just tap it and press send in WhatsApp.</p></details>
             <details><summary>How is the $300 ProviaMed voucher different?</summary><p>The voucher is a separate collaboration gift with ProviaMed Diagnostic Clinic in the Philippines, worth $300 USD toward 3 days and 2 nights in Da Nang, valid for travel from December 2026 to February 2027. The Christmas deals are open to everyone, no voucher needed.</p></details>
             <details><summary>Can HiGo book trips beyond Da Nang?</summary><p>Yes. Da Nang is home base, but HiGo Travel can help beyond Da Nang too. Let us know where you want to go, when, and how many are travelling, and we'll put something together for you.</p></details>
@@ -646,7 +710,7 @@
             <a href="#book" data-goto-book>Book with your date filled in</a>
           </nav>
         </div>
-        <p class="fine">Prices are in USD and were set for the Christmas holiday promotion: Buy 1 Take 1 at $250 for 2 pax (3 days, 2 nights) and the family deal at $450 for 4 pax. The main tour includes Ba Na Hills and Hoi An. The Hue tour is optional, and custom itineraries are available at an additional cost. All bookings are subject to availability and confirmed directly with HiGo Travel on WhatsApp. The ProviaMed gift voucher is worth $300 USD, valid for travel December 2026 to February 2027, non-refundable and non-exchangeable for cash. Photo credits: My Khe Beach via Da Nang Fantasticity city tourism portal; Dragon Bridge and Golden Bridge via tour listings; Hoi An via A Vagabond Life.</p>
+        <p class="fine">Prices are in USD and were set for the Christmas holiday promotion: Buy 1 Take 1 at $250 for 2 pax (3 days, 2 nights) and the family deal at $450 for 4 pax. Extended stays for 2 pax: $280 for 3 days and 2 nights, $310 for 4 days and 3 nights, $340 for 5 days and 4 nights, and $370 for 6 days and 5 nights, at +$30 per extra night. The main tour includes Ba Na Hills and Hoi An. The Hue tour is optional, and custom itineraries are available at an additional cost. All bookings are subject to availability and confirmed directly with HiGo Travel on WhatsApp. The ProviaMed gift voucher is worth $300 USD, valid for travel December 2026 to February 2027, non-refundable and non-exchangeable for cash. Photo credits: My Khe Beach via Da Nang Fantasticity city tourism portal; Dragon Bridge and Golden Bridge via tour listings; Hoi An via A Vagabond Life.</p>
       </div>
     </footer>
 
@@ -785,12 +849,33 @@
         var dealTouched = false;
 
         var DEALS = {
-          b1t1:   { line: 'Buy 1 Take 1, $250 for 2 people (3 days, 2 nights in Da Nang: hotel, Ba Na Hills and Hoi An)', hint: '3 days, 2 nights in Da Nang: hotel, Ba Na Hills & Hoi An.' },
-          family: { line: 'Family Deal, $450 for 4 people (3 days, 2 nights in Da Nang: hotel, Ba Na Hills and Hoi An)', hint: '4 travel for the price of 2. Same full Da Nang package.' },
+          b1t1:   { line: 'Buy 1 Take 1, $250 for 2 people (3 days, 2 nights in Da Nang: hotel, Ba Na Hills and Hoi An)', hint: '3 days, 2 nights in Da Nang: hotel, Ba Na Hills & Hoi An.', days: 3, nights: 2, price: 250, per: 125 },
+          family: { line: 'Family Deal, $450 for 4 people (3 days, 2 nights in Da Nang: hotel, Ba Na Hills and Hoi An)', hint: '4 travel for the price of 2. Same full Da Nang package.', days: 3, nights: 2, price: 450, per: 112.5 },
+          ext3:   { line: 'Extended Stay, 3 days and 2 nights, $280 for 2 people ($140 each) in Da Nang: hotel, Ba Na Hills and Hoi An', hint: 'Extended stay for 2: 3 days, 2 nights, $280 total ($140 each).', days: 3, nights: 2, price: 280, per: 140, ext: true },
+          ext4:   { line: 'Extended Stay, 4 days and 3 nights, $310 for 2 people ($155 each) in Da Nang: hotel, Ba Na Hills and Hoi An', hint: 'Extended stay for 2: 4 days, 3 nights, $310 total ($155 each). +$30 for the extra night.', days: 4, nights: 3, price: 310, per: 155, ext: true },
+          ext5:   { line: 'Extended Stay, 5 days and 4 nights, $340 for 2 people ($170 each) in Da Nang: hotel, Ba Na Hills and Hoi An', hint: 'Extended stay for 2: 5 days, 4 nights, $340 total ($170 each). +$30 per extra night.', days: 5, nights: 4, price: 340, per: 170, ext: true },
+          ext6:   { line: 'Extended Stay, 6 days and 5 nights, $370 for 2 people ($185 each) in Da Nang: hotel, Ba Na Hills and Hoi An', hint: 'Extended stay for 2: 6 days, 5 nights, $370 total ($185 each). +$30 per extra night.', days: 6, nights: 5, price: 370, per: 185, ext: true },
           custom: { line: 'Custom itinerary (priced for our group)', hint: 'Your route, your days. Priced at an additional cost, quoted on WhatsApp.' },
           beyond: { line: 'Trip beyond Da Nang (please help us plan it)', hint: 'Tell us where in the message chat and HiGo will put something together.' },
-          voucher:{ line: 'Claim the $300 ProviaMed gift voucher (3 days, 2 nights in Da Nang, travel Dec 2026 to Feb 2027)', hint: 'The HiGo Travel × ProviaMed voucher. Travel Dec 2026 to Feb 2027.' }
+          voucher:{ line: 'Claim the $300 ProviaMed gift voucher (3 days, 2 nights in Da Nang, travel Dec 2026 to Feb 2027)', hint: 'The HiGo Travel × ProviaMed voucher. Travel Dec 2026 to Feb 2027.', days: 3, nights: 2 }
         };
+
+        function money(n) { return '$' + (n % 1 ? n.toFixed(2) : n); }
+        function parseDateVal(val) {
+          if (!val) return null;
+          var parts = val.split('-');
+          if (parts.length !== 3) return null;
+          var dt = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+          return isNaN(dt.getTime()) ? null : dt;
+        }
+        function formatDateObj(dt) {
+          if (!dt) return null;
+          try {
+            return new Intl.DateTimeFormat('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(dt);
+          } catch (e) {
+            return dt.toDateString();
+          }
+        }
 
         function formatDate(val) {
           if (!val) return null;
@@ -819,18 +904,35 @@
             if (pax >= 4 && dealKey === 'b1t1') { dealKey = 'family'; dealSel.value = 'family'; }
             else if (pax <= 3 && dealKey === 'family') { dealKey = 'b1t1'; dealSel.value = 'b1t1'; }
           }
-          if (source === 'deal') dealTouched = (dealKey === 'custom' || dealKey === 'beyond' || dealKey === 'voucher');
+          if (source === 'deal') dealTouched = (dealKey === 'custom' || dealKey === 'beyond' || dealKey === 'voucher' || !!DEALS[dealKey].ext);
 
           paxEl.textContent = pax;
-          dealHint.textContent = DEALS[dealKey].hint;
+          var deal = DEALS[dealKey];
+          dealHint.textContent = deal.hint;
 
           var niceDate = formatDate(dateInput.value);
-          dateHint.textContent = niceDate
-            ? 'Arriving ' + niceDate + '. The tour runs 3 days from there.'
-            : 'Tap the calendar and choose the day you want to arrive in Da Nang.';
+          var arrival = parseDateVal(dateInput.value);
+          var endDate = null, niceEnd = null;
+          if (arrival && deal.nights) {
+            endDate = new Date(arrival.getFullYear(), arrival.getMonth(), arrival.getDate() + deal.nights);
+            niceEnd = formatDateObj(endDate);
+          }
+          if (niceDate && deal.days) {
+            dateHint.textContent = 'Arriving ' + niceDate + '. This stay runs ' + deal.days + ' days and ' + deal.nights + ' nights, ending ' + niceEnd + '.';
+          } else if (niceDate) {
+            dateHint.textContent = 'Arriving ' + niceDate + '.';
+          } else if (deal.days) {
+            dateHint.textContent = 'Tap the calendar and choose your arrival day. This stay runs ' + deal.days + ' days and ' + deal.nights + ' nights from there.';
+          } else {
+            dateHint.textContent = 'Tap the calendar and choose the day you want to arrive in Da Nang.';
+          }
           syncQuickDates();
 
-          if (pax <= 1) verdictEl.innerHTML = 'The Christmas deals are built for two or more. Bring someone along: <span class="amt">$250 covers both of you.</span>';
+          if (deal.ext) {
+            if (pax === 2) verdictEl.innerHTML = 'Extended stay picked: <span class="amt">' + money(deal.price) + ' total for 2</span> (' + money(deal.per) + ' each), ' + deal.days + ' days and ' + deal.nights + ' nights. Each extra night is just +$30 for two.';
+            else verdictEl.innerHTML = 'Extended stays are priced for 2 at <span class="amt">' + money(deal.price) + ' total</span> (' + deal.days + ' days, ' + deal.nights + ' nights). <span class="amt">Send the booking</span> and HiGo Travel will price it for your group of ' + pax + '.';
+          }
+          else if (pax <= 1) verdictEl.innerHTML = 'The Christmas deals are built for two or more. Bring someone along: <span class="amt">$250 covers both of you.</span>';
           else if (pax === 2) verdictEl.innerHTML = 'Perfect fit: <span class="amt">Buy 1 Take 1, $250 total</span> ($125 each), 3 days and 2 nights.';
           else if (pax === 3) verdictEl.innerHTML = 'Family deals are available for 3 too. <span class="amt">Send the booking</span> and HiGo Travel will price it for your group.';
           else if (pax === 4) verdictEl.innerHTML = 'Best value: <span class="amt">Family deal, $450 total</span> ($112.50 each). Two of you travel free.';
@@ -840,7 +942,11 @@
           lines.push('Hi HiGo Travel! I would like to book a trip.');
           lines.push('');
           lines.push('Deal: ' + DEALS[dealKey].line);
+          if (deal.days) lines.push('Stay length: ' + deal.days + ' days, ' + deal.nights + ' nights');
+          if (deal.price) lines.push('Price: ' + money(deal.price) + ' total' + (deal.per ? ' (' + money(deal.per) + ' per person)' : ''));
+          if (deal.ext) lines.push('Extended stay rate: +$30 per extra night for 2 people');
           lines.push('Travel date: ' + (niceDate ? niceDate : 'Not picked yet, I am flexible, please suggest dates'));
+          if (niceDate && niceEnd) lines.push('Trip ends: ' + niceEnd);
           lines.push('Travellers: ' + pax + (pax === 1 ? ' person' : ' people'));
           if (hueSel.value === 'yes') lines.push('Add-on: Yes please, add the Hue tour.');
           lines.push('');
@@ -872,6 +978,7 @@
               dealSel.value = key;
               if (key === 'family' && pax < 4) pax = 4;
               if (key === 'b1t1' && (pax < 2 || pax > 3)) pax = 2;
+              if (DEALS[key].ext) pax = 2;
               updateBooking('deal');
             }
             gotoBook();
